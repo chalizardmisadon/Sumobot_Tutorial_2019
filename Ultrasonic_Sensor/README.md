@@ -1,4 +1,3 @@
-# Sumobot_Tutorial_2019
 # Ultrasonic_Sensor
 
 For those of you who pointed out that in our program statement
