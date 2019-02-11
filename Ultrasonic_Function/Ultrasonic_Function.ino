@@ -2,7 +2,7 @@
 #define echoPin 13
 
 long duration;
-int distance;
+int distance, num;
 
 void setup() {
   // put your setup code here, to run once:
@@ -11,8 +11,7 @@ void setup() {
   Serial.begin(9600); //Starts the serial communication
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+int getUltrasonicDistance(){
   //Clear the trig pin for 2ms
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -24,7 +23,14 @@ void loop() {
   duration = pulseIn(echoPin, HIGH); //detect when echoPin is HIGH
   //Calculate the distance
   distance = duration * 0.034/2; //distance in cm
-  //Prints the distance on the Serial Monitor
+  return distance;
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  //Call getUltrasonicDistance() function
+  num = getUltrasonicDistance();
+  //Prints num on the Serial Monitor
   Serial.print("Distance (cm): ");
-  Serial.println(distance);
+  Serial.println(num);
 }
