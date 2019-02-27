@@ -1,4 +1,4 @@
-#define pinLED 13
+#define pinLED 11
 int dutyCycle, increment;
 
 void setup() {
@@ -20,8 +20,8 @@ void loop() {
   if (dutyCycle <= 0){
     increment = 1;
   }
-  Serial.println(dutyCycle); //print out brightness
-  //Serial.println(analogRead(A0)); //print out analog
+  //Serial.println(dutyCycle); //print out brightness
+  Serial.println(analogRead(A0)); //print out analog
 }
 
 /*
